@@ -1628,154 +1628,101 @@ elif page == "About":
 
     _, col_about, _ = st.columns([1, 2, 1])
     with col_about:
-        st.markdown("""
-        <div style='background:linear-gradient(145deg,#071428,#0a1e35,#071428);
-                    border:1px solid #1a4a7a; border-radius:16px;
-                    padding:40px; text-align:center;
-                    box-shadow:0 0 60px #00d4ff22, 0 0 120px #00508044;
-                    position:relative;'>
 
-            <!-- Corners -->
-            <div style="position:absolute;top:14px;left:14px;width:20px;height:20px;
-                        border-top:2px solid #00d4ff;border-left:2px solid #00d4ff;"></div>
-            <div style="position:absolute;top:14px;right:14px;width:20px;height:20px;
-                        border-top:2px solid #00d4ff;border-right:2px solid #00d4ff;"></div>
-            <div style="position:absolute;bottom:14px;left:14px;width:20px;height:20px;
-                        border-bottom:2px solid #00d4ff;border-left:2px solid #00d4ff;"></div>
-            <div style="position:absolute;bottom:14px;right:14px;width:20px;height:20px;
-                        border-bottom:2px solid #00d4ff;border-right:2px solid #00d4ff;"></div>
-
-            <!-- Logo -->
-            <div style='font-size:4rem; margin-bottom:10px;'>🛡️</div>
-
-            <!-- App name -->
-            <div style='font-family:Orbitron,monospace; font-size:1.8rem;
-                        font-weight:900; letter-spacing:4px; margin-bottom:4px;'>
-                <span style="color:#fff;">Cyber</span>
-                <span style="color:#00d4ff;text-shadow:0 0 20px #00d4ffaa;">Shield</span>
-                <span style="color:#fff;"> AI</span>
+        # Logo + Title
+        st.markdown("""<div style="text-align:center; padding:30px 20px 10px;">
+            <div style="font-size:4rem;">🛡️</div>
+            <div style="font-family:Orbitron,monospace; font-size:1.8rem;
+                        font-weight:900; letter-spacing:4px; margin:10px 0 4px;
+                        color:#00d4ff; text-shadow:0 0 20px #00d4ffaa;">
+                CyberDetect AI
             </div>
-            <div style='font-family:Share Tech Mono,monospace; font-size:0.65rem;
-                        color:#2a5f7a; letter-spacing:4px;
-                        text-transform:uppercase; margin-bottom:25px;'>
+            <div style="font-family:Share Tech Mono,monospace; font-size:0.65rem;
+                        color:#2a5f7a; letter-spacing:4px; text-transform:uppercase;">
                 Network Intrusion Detection System · v1.0
             </div>
+        </div>""", unsafe_allow_html=True)
 
-            <hr style='border-color:#0d4f8c; margin:0 0 25px;'>
+        st.markdown("<hr style='border-color:#0d4f8c;'>", unsafe_allow_html=True)
 
-            <!-- Info grid -->
-            <div style='display:grid; grid-template-columns:1fr 1fr;
-                        gap:14px; text-align:left; margin-bottom:25px;'>
-                <div style='background:#071428; border:1px solid #0d4f8c;
-                            border-radius:8px; padding:14px;'>
-                    <div style='font-family:Share Tech Mono,monospace;
-                                font-size:0.6rem; color:#2a5f7a;
-                                letter-spacing:2px; margin-bottom:6px;'>
-                        📊 DATASET
-                    </div>
-                    <div style='font-family:Rajdhani,sans-serif;
-                                color:#8ab4d4; font-size:0.85rem;
-                                line-height:1.7;'>
-                        Global Cybersecurity<br>Threats 2015–2024<br>
-                        <span style='color:#00d4ff;'>3 000 incidents</span>
-                    </div>
-                </div>
-                <div style='background:#071428; border:1px solid #0d4f8c;
-                            border-radius:8px; padding:14px;'>
-                    <div style='font-family:Share Tech Mono,monospace;
-                                font-size:0.6rem; color:#2a5f7a;
-                                letter-spacing:2px; margin-bottom:6px;'>
-                        🛡️ ATTAQUES
-                    </div>
-                    <div style='font-family:Rajdhani,sans-serif;
-                                color:#8ab4d4; font-size:0.85rem;
-                                line-height:1.7;'>
-                        DDoS · Phishing<br>SQL Injection · Ransomware<br>
-                        <span style='color:#00d4ff;'>Malware · MitM</span>
-                    </div>
-                </div>
-                <div style='background:#071428; border:1px solid #0d4f8c;
-                            border-radius:8px; padding:14px;'>
-                    <div style='font-family:Share Tech Mono,monospace;
-                                font-size:0.6rem; color:#2a5f7a;
-                                letter-spacing:2px; margin-bottom:6px;'>
-                        🤖 MODÈLES ML
-                    </div>
-                    <div style='font-family:Rajdhani,sans-serif;
-                                color:#8ab4d4; font-size:0.85rem;
-                                line-height:1.7;'>
-                        Logistic Regression · KNN<br>Random Forest · SVM<br>
-                        <span style='color:#00d4ff;'>+ SMOTE Balancing</span>
-                    </div>
-                </div>
-                <div style='background:#071428; border:1px solid #0d4f8c;
-                            border-radius:8px; padding:14px;'>
-                    <div style='font-family:Share Tech Mono,monospace;
-                                font-size:0.6rem; color:#2a5f7a;
-                                letter-spacing:2px; margin-bottom:6px;'>
-                        🔧 FRAMEWORK
-                    </div>
-                    <div style='font-family:Rajdhani,sans-serif;
-                                color:#8ab4d4; font-size:0.85rem;
-                                line-height:1.7;'>
-                        Streamlit · Scikit-learn<br>Pandas · Matplotlib<br>
-                        <span style='color:#00d4ff;'>Python 3.12</span>
-                    </div>
-                </div>
-            </div>
+        # Info cards
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("""<div style="background:#071428; border:1px solid #0d4f8c;
+                border-radius:8px; padding:14px; margin-bottom:10px;">
+                <div style="font-family:Share Tech Mono,monospace; font-size:0.6rem;
+                            color:#2a5f7a; letter-spacing:2px; margin-bottom:6px;">
+                    📊 DATASET</div>
+                <div style="font-family:Rajdhani,sans-serif; color:#8ab4d4;
+                            font-size:0.85rem; line-height:1.7;">
+                    Global Cybersecurity<br>Threats 2015-2024<br>
+                    <span style="color:#00d4ff;">3 000 incidents</span>
+                </div></div>""", unsafe_allow_html=True)
 
-            <hr style='border-color:#0d4f8c; margin:0 0 25px;'>
+            st.markdown("""<div style="background:#071428; border:1px solid #0d4f8c;
+                border-radius:8px; padding:14px;">
+                <div style="font-family:Share Tech Mono,monospace; font-size:0.6rem;
+                            color:#2a5f7a; letter-spacing:2px; margin-bottom:6px;">
+                    🤖 MODELES ML</div>
+                <div style="font-family:Rajdhani,sans-serif; color:#8ab4d4;
+                            font-size:0.85rem; line-height:1.7;">
+                    Logistic Regression<br>KNN · Random Forest · SVM<br>
+                    <span style="color:#00d4ff;">+ SMOTE Balancing</span>
+                </div></div>""", unsafe_allow_html=True)
 
-            <!-- Author -->
-            <div style='font-family:Share Tech Mono,monospace;
-                        font-size:0.6rem; color:#2a5f7a;
-                        letter-spacing:3px; margin-bottom:10px;'>
-                ── DEVELOPED BY ──
-            </div>
-            <div style='font-family:Orbitron,monospace;
-                        font-size:1.6rem; color:#00d4ff;
-                        font-weight:900; letter-spacing:3px;
-                        text-shadow:0 0 25px #00d4ffbb;
-                        margin-bottom:6px;'>
-                Marwa Lehdaoui
-            </div>
-            <div style='font-family:Share Tech Mono,monospace;
-                        font-size:0.65rem; color:#4a7fa0;
-                        letter-spacing:2px; margin-bottom:20px;'>
-                SOC AI Workshop · 2026
-            </div>
+        with col2:
+            st.markdown("""<div style="background:#071428; border:1px solid #0d4f8c;
+                border-radius:8px; padding:14px; margin-bottom:10px;">
+                <div style="font-family:Share Tech Mono,monospace; font-size:0.6rem;
+                            color:#2a5f7a; letter-spacing:2px; margin-bottom:6px;">
+                    🛡️ ATTAQUES</div>
+                <div style="font-family:Rajdhani,sans-serif; color:#8ab4d4;
+                            font-size:0.85rem; line-height:1.7;">
+                    DDoS · Phishing<br>SQL Injection · Ransomware<br>
+                    <span style="color:#00d4ff;">Malware · MitM</span>
+                </div></div>""", unsafe_allow_html=True)
 
-            <!-- Tags -->
-            <div style='display:flex; justify-content:center;
-                        gap:8px; flex-wrap:wrap;'>
-                <span style='background:rgba(0,212,255,0.1);
-                             border:1px solid #00d4ff44;
+            st.markdown("""<div style="background:#071428; border:1px solid #0d4f8c;
+                border-radius:8px; padding:14px;">
+                <div style="font-family:Share Tech Mono,monospace; font-size:0.6rem;
+                            color:#2a5f7a; letter-spacing:2px; margin-bottom:6px;">
+                    🔧 FRAMEWORK</div>
+                <div style="font-family:Rajdhani,sans-serif; color:#8ab4d4;
+                            font-size:0.85rem; line-height:1.7;">
+                    Streamlit · Scikit-learn<br>Pandas · Matplotlib<br>
+                    <span style="color:#00d4ff;">Python 3.12</span>
+                </div></div>""", unsafe_allow_html=True)
+
+        st.markdown("<hr style='border-color:#0d4f8c;'>", unsafe_allow_html=True)
+
+        # Author
+        st.markdown("""<div style="text-align:center; padding:20px 0;">
+            <div style="font-family:Share Tech Mono,monospace; font-size:0.6rem;
+                        color:#2a5f7a; letter-spacing:3px; margin-bottom:10px;">
+                DEVELOPED BY</div>
+            <div style="font-family:Orbitron,monospace; font-size:1.6rem;
+                        color:#00d4ff; font-weight:900; letter-spacing:3px;
+                        text-shadow:0 0 25px #00d4ffbb; margin-bottom:6px;">
+                Marwa Lehdaoui</div>
+            <div style="font-family:Share Tech Mono,monospace; font-size:0.65rem;
+                        color:#4a7fa0; letter-spacing:2px; margin-bottom:20px;">
+                SOC AI Workshop · 2026</div>
+            <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap;">
+                <span style="background:rgba(0,212,255,0.1); border:1px solid #00d4ff44;
                              border-radius:20px; padding:4px 12px;
                              font-family:Share Tech Mono,monospace;
-                             font-size:0.65rem; color:#00d4ff;'>
-                    Machine Learning
-                </span>
-                <span style='background:rgba(0,255,136,0.1);
-                             border:1px solid #00ff8844;
+                             font-size:0.65rem; color:#00d4ff;">Machine Learning</span>
+                <span style="background:rgba(0,255,136,0.1); border:1px solid #00ff8844;
                              border-radius:20px; padding:4px 12px;
                              font-family:Share Tech Mono,monospace;
-                             font-size:0.65rem; color:#00ff88;'>
-                    Cybersecurity
-                </span>
-                <span style='background:rgba(255,215,0,0.1);
-                             border:1px solid #ffd70044;
+                             font-size:0.65rem; color:#00ff88;">Cybersecurity</span>
+                <span style="background:rgba(255,215,0,0.1); border:1px solid #ffd70044;
                              border-radius:20px; padding:4px 12px;
                              font-family:Share Tech Mono,monospace;
-                             font-size:0.65rem; color:#ffd700;'>
-                    SOC Analytics
-                </span>
-                <span style='background:rgba(170,68,255,0.1);
-                             border:1px solid #aa44ff44;
+                             font-size:0.65rem; color:#ffd700;">SOC Analytics</span>
+                <span style="background:rgba(170,68,255,0.1); border:1px solid #aa44ff44;
                              border-radius:20px; padding:4px 12px;
                              font-family:Share Tech Mono,monospace;
-                             font-size:0.65rem; color:#aa44ff;'>
-                    Streamlit
-                </span>
+                             font-size:0.65rem; color:#aa44ff;">Streamlit</span>
             </div>
-        </div>
-        """, unsafe_allow_html=True)
+        </div>""", unsafe_allow_html=True)
