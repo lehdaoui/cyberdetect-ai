@@ -150,9 +150,6 @@ Un grand merci à **Monsieur Jamal Et-Tousy**, formateur à YaneCode Academy, po
 
 ---
 
-## 📄 Licence
-
-Ce projet est développé à des fins éducatives dans le cadre de la formation à YaneCode Academy — Année 2026.
 
 ---
 
