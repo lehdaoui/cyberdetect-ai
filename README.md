@@ -56,14 +56,15 @@ Tous les algorithmes suivants ont été développés et comparés dans ce projet
 ### Techniques appliquées
 - **SMOTE Balancing** — Équilibrage des classes pour éviter le biais
 - **Cross-validation** — Validation croisée pour fiabiliser les résultats
-- **Comparaison des modèles** — Évaluation et sélection du meilleur algorithme
+- **Label Encoding** — Encodage des variables catégorielles
+- **Feature Scaling** — Normalisation des données avec StandardScaler
 
 ### Résultats
 | Métrique | Valeur |
 |----------|--------|
 | Meilleur modèle | **Random Forest** |
 | Précision | **92%** |
-| Dataset | Global Cybersecurity Threats 2015–2024 |
+| Dataset | Menaces mondiales en cybersécurité |
 | Incidents analysés | **3 000** |
 | Pays couverts | **10 pays** |
 
@@ -77,6 +78,7 @@ Streamlit          → Interface web interactive
 Scikit-learn       → Modèles de Machine Learning
 Pandas             → Manipulation et analyse des données
 Matplotlib         → Visualisation des données
+Pickle             → Sauvegarde des modèles entraînés
 ```
 
 ---
@@ -96,7 +98,7 @@ pip install -r requirements.txt
 
 ### 3. Lancer l'application
 ```bash
-streamlit run app.py
+streamlit run cyber.py
 ```
 
 ### 4. Ouvrir dans le navigateur
@@ -111,24 +113,17 @@ http://localhost:8501
 ```
 cyberdetection-IA/
 │
-├── app.py                    # Point d'entrée principal
-├── requirements.txt          # Dépendances Python
-├── README.md                 # Documentation
+├── cyber.py                          # Point d'entrée principal (Streamlit)
+├── Cyberdétecteur.py                 # Module de détection principal
+├── requirements.txt                  # Dépendances Python
+├── README.md                         # Documentation
 │
-├── pages/
-│   ├── dashboard.py          # System Dashboard
-│   ├── predictor.py          # Attack Predictor
-│   ├── monitoring.py         # Live Monitoring
-│   └── explorer.py           # Data Explorer
+├── best_model.pkl                    # Meilleur modèle ML sauvegardé (Random Forest)
+├── label_encoder.pkl                 # Encodeur des labels sauvegardé
+├── scaler.pkl                        # Scaler de normalisation sauvegardé
 │
-├── models/
-│   ├── logistic_regression.py
-│   ├── knn.py
-│   ├── random_forest.py
-│   └── svm.py
-│
-└── data/
-    └── cybersecurity_data.csv  # Dataset (3 000 incidents)
+└── Menaces mondiales en matière      # Dataset — 3 000 incidents (2015–2024)
+    de cybersécurité.csv
 ```
 
 ---
@@ -150,6 +145,9 @@ Un grand merci à **Monsieur Jamal Et-Tousy**, formateur à YaneCode Academy, po
 
 ---
 
+## 📄 Licence
+
+Ce projet est développé à des fins éducatives dans le cadre de la formation à YaneCode Academy — Année 2026.
 
 ---
 
